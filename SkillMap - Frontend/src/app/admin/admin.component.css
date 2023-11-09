@@ -1,0 +1,158 @@
+@import '~shepherd.js/dist/css/shepherd.css';
+
+
+body, html {
+    height: 100%;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .container-fluid {
+    flex-grow: 1;
+  }
+
+  .container-fluid {
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .row.h-100 {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .sidebar {
+    background-color: #4b0082;
+    background-image: linear-gradient(to right bottom, #4b0082, #8a2be2);
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 200px;
+    display: block;
+    margin: 0 auto 2rem;
+  }
+
+  .nav {
+    flex-grow: 1;
+  }
+
+  .nav-link {
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+.nav-item {
+  position: relative;
+}
+
+  .nav-link:hover {
+    color: #fffff2;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+  }
+
+  .content {
+    padding: 1rem;
+    margin-top: 80px;
+    overflow-x: hidden;
+    width: 100vw;
+  }
+
+
+.shepherd-theme-custom{
+  color: deeppink;
+  background-color: #00AAFF;
+}
+
+.tour-modal {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  z-index: 1000;
+  /* Para dar o efeito de "seta" do balão de dica */
+  border-top: 10px solid transparent;
+  border-right: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+}
+
+.tour-modal .tour-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.tour-modal .tour-content {
+  margin-bottom: 15px;
+}
+
+.tour-modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: #4b0082; /* Roxo */
+  color: #ffffff;
+}
+
+.tour-modal button:hover {
+  background-color: #8a2be2; /* Roxo mais claro no hover */
+}
+
+.tour-modal::before {
+  content: "";
+  position: absolute;
+  top: 50%;  /* Centralizar verticalmente */
+  left: -10px;  /* Posicionar a seta para a esquerda do modal */
+  transform: translateY(-50%);  /* Alinhar verticalmente no centro */
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Isso adiciona um fundo preto com 70% de opacidade */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Isso garante que o overlay esteja no topo de outros elementos */
+}
+
+.centered-modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%; /* Você pode ajustar conforme necessário */
+  max-width: 800px;
+}
+
+
+
+

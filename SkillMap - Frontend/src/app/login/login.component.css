@@ -1,0 +1,215 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cabin', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  form {
+    padding: 2rem;
+    margin: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+  }
+  .left-panel {
+      background: linear-gradient(to right bottom, #4B0082, #8A2BE2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right-panel {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 500px;
+    height: auto;
+  }
+  
+  .welcome-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    color: #542DB0;
+    text-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+  }
+  
+  .form-control {
+    font-size: 1.75rem;
+    height: auto;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.3);
+    transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+  .form-control:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+
+  }
+  .btn {
+    font-size: 1.75rem;
+    border-radius: 0.5rem;
+    background-color: #542DB0;
+    border-color: #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    transform: translateY(-2px);
+  }
+  
+  footer-logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .forgot-password {
+    color: #542DB0;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: #6f42c1;
+  }
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.logo-mobile{
+  display: none;
+  
+}
+
+input:checked + .slider {
+  background-color: #6f42c1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #6f42c1;
+}
+
+input:checked ~ .slider .icon {
+  color: #ffffff;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) { 
+  .left-panel {
+    display: none; 
+  }
+
+  .container-fluid {
+    background: linear-gradient(to right bottom, #4B0082, #8A2BE2); 
+  }
+
+  .right-panel {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none; 
+  }
+
+  .welcome-text {
+    display: none;
+  }
+
+  .logomobile {
+    display: block;
+    width: 15px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  form {
+    width: 90%; 
+    margin: 0; 
+    box-shadow: none; 
+    background-color: transparent; 
+  }
+
+  .btn {
+    font-size: 1.75rem;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #542DB0;
+    border-color: #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #6f42c1;
+    color: #ffffff;
+    border-color: #6f42c1;
+    transform: translateY(-2px);
+  }
+}

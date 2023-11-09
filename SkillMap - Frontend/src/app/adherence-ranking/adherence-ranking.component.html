@@ -1,0 +1,30 @@
+<body>
+<div class="main-container">
+  <button class="back-button" (click)="goBack()">&#8592;</button>
+  <h2 class="welcome-text">Ranking de Colaboradores</h2>
+
+  <div class="dashboard-content">
+    <!-- Área principal onde serão exibidos o ranking dos colaboradores -->
+    <div class="main-content">
+      <!-- Lista de ranking dos colaboradores -->
+      <div class="ranking-list">
+        <div class="ranking-item" *ngFor="let employee of rankedEmployees">
+          <div class="ranking-pic" *ngIf="employee.profilePicture; else defaultAvatar">
+            <img [src]="employee.profilePicture" alt="Foto do Colaborador">
+          </div>
+          <ng-template #defaultAvatar>
+            <div class="ranking-pic default-avatar">
+              {{ getInitials(employee.name) }}
+            </div>
+          </ng-template>
+          <div class="ranking-details">
+            <p>{{ employee.adherence }}%</p>
+            <h4>{{ employee.name }}</h4>
+            <h4>Cargo: {{ employee.role}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

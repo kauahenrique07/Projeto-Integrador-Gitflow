@@ -1,0 +1,60 @@
+h2 {
+  color: #4b0082;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: auto;
+}
+.btn-purple {
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+.btn-purple:hover {
+  background-color: #7c1cbf;
+}
+.register-competencies-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 85vh;
+  width: 700px;
+  overflow-y: auto;
+  justify-content: center;
+}
+mat-select {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.btn-space {
+  margin-right: 20px;
+}
+.fixed-width-select {
+  width: 100%;
+}
+.register-competencies-container::-webkit-scrollbar {
+  width: 1px;
+}
+.register-competencies-container::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+.register-competencies-container::-webkit-scrollbar-thumb {
+  background-color: #4b0082;
+  border-radius: 20px;
+  border: 3px solid #f7f7f7;
+}
+.competency-field {
+  width: 100%;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 0rem;
+}

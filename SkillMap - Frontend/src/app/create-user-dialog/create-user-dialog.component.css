@@ -1,0 +1,101 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+:host {
+    display: block;
+    width: 100%;
+  }
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.4;
+  color: #542DB0;
+  text-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    color: #542DB0;
+  }
+  
+  .form-group input {
+    font-size: 1rem;
+    height: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.3);
+    transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+  }
+  
+  button {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background-color: #542DB0;
+    border-color: #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    margin-right: 1rem;
+    cursor: pointer;
+     margin: 0 0.5rem;
+  }
+  
+  button:hover {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    transform: translateY(-2px);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .form-container {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+
+.form-group select {
+  font-size: 1rem;
+  height: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #542DB0;
+  box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.3);
+  transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}
+
+.create-user-dialog-container::-webkit-scrollbar {
+  width: 1px;
+}
+

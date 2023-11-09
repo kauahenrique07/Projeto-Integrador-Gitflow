@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div *ngIf="showOnboarding" class="overlay">
+    <div class="centered-modal">
+      <app-onboarding *ngIf="showOnboarding" (onboardingFinished)="endOnboardingAndStartTour()"></app-onboarding>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="sidebar">
+      <img src="assets/images/23nobg.png" alt="Logotipo SkillMap" class="logo" />
+      <ul class="nav flex-column">
+        <li class="nav-item" tourAnchor="ciclos">
+          <a class="nav-link" (click)="selectOption('cycles')">Gerenciar Ciclos</a>
+        </li>
+        <li class="nav-item" tourAnchor="usuarios">
+          <a class="nav-link" (click)="selectOption('users')">Gerenciar Usuários</a>
+        </li>
+        <li class="nav-item" tourAnchor="cargos">
+          <a class="nav-link" (click)="selectOption('competencies')">Gerenciar Cargos</a>
+        </li>
+
+        <li class="nav-item">
+        <button class="nav-link" (click)="startOnboarding()">Acessar Onboarding do Sistema</button>
+        </li>
+        <li class="nav-item mt-auto">
+          <a class="nav-link" (click)="logout()">Sair</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="content">
+      <ng-container *ngComponentOutlet="component"></ng-container>
+    </div>
+  </div>
+
+  <div *ngIf="isTourActive" class="tour-modal" [style.top]="modalTop" [style.left]="modalLeft">
+    <h3>{{ tourSteps[currentTourStep].title }}</h3>
+    <p>{{ tourSteps[currentTourStep].content }}</p>
+    <button (click)="nextNativeStep()">Próximo</button>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+h2 {
+    color: #4b0082;
+    text-align: center; 
+  }
+  
+  .btn-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-purple {
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-purple:hover {
+    background-color: #7c1cbf;
+  }
+  
+  .create-role-dialog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    justify-content: center;
+    overflow-y: auto;
+  }
+  
+  .create-role-dialog-container::-webkit-scrollbar {
+    width: 1px; 
+  }
+  
+  .create-role-dialog-container::-webkit-scrollbar-track {
+    background: #f7f7f7; 
+  }
+  
+  .create-role-dialog-container::-webkit-scrollbar-thumb {
+    background-color: #4b0082; 
+    border-radius: 20px; 
+    border: 3px solid #f7f7f7; 
+  }
+  
+  .fixed-width-select {
+    width: 100%;  
+  }
+  
+  .btn-space {
+    margin-right: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: auto;
+  }
+  
+  .form-check-input {
+    margin-right: 0.5rem;
+  }

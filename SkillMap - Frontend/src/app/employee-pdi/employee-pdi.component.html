@@ -1,0 +1,20 @@
+<div class="task-list-container">
+  <h1 class="task-list-title">Plano de desenvolvimento individual de: {{employee?.name}}</h1>
+  <app-employee-johari-window></app-employee-johari-window>
+  <h1 class="task-list-title">Tarefas</h1>
+  <button mat-raised-button class="add-task-button" (click)="createNewTask()">Nova Tarefa</button>
+  <div class="task-list">
+    <mat-card class="task-card" *ngFor="let task of tasks">
+      <div class="task-info">
+        <h2 class="task-name">{{task.title}}</h2>
+        <p class="task-description">{{task.description}}</p>
+        <p class="task-deadline">Prazo: {{task.deadline | date:'dd/MM/yyyy'}}</p>
+        <p [ngClass]="{'task-status-pending': task.taskStatusEnum === 'PENDENTE',
+                         'task-status-in-progress': task.taskStatusEnum === 'EM_ANDAMENTO',
+                         'task-status-completed': task.taskStatusEnum === 'CONCLUIDA'}">
+          Status: {{getFriendlyStatus(task.taskStatusEnum)}}
+        </p>
+      </div>
+    </mat-card>
+  </div>
+</div>

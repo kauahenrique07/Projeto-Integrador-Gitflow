@@ -1,0 +1,38 @@
+<div class="johari-window-container">
+    <div class="ideal-competencies-container">
+      <h2 class="quadrant-title">Competências Ideais</h2>
+      <table class="competency-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Competência</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let competency of idealCompetencies">
+            <td>{{competency.code}}</td>
+            <td>{{competency.title}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="quadrant-grid">
+      <div class="johari-window-quadrant" *ngFor="let quadrant of quadrants; index as i">
+        <h2 class="quadrant-title">{{quadrantTitles[i]}}</h2>
+        <table class="competency-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Competência</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let competency of quadrant">
+              <td>{{competency.code}}</td>
+              <td>{{competency.title}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,59 @@
+<body>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-md-4 left-panel">
+        <img src="assets/images/23nobg.png" alt="Your Image Description" class="logo" />
+      </div>
+      <div class="col-md-8 right-panel">
+        <img src="assets/images/23nobg.png" alt="Your Image Description" class="logo d-md-none" />
+        <div class="welcome-text">
+          Seja<br />Bem-vindo ao<br />Skillmap
+        </div>
+        <form (ngSubmit)="onFormSubmit()">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="nome@exemplo.com"
+              [formControl]="emailFormControl"
+            />
+            <label for="email">Email</label>
+            <span
+              *ngIf="emailFormControl.invalid && emailFormControl.touched"
+              class="text-danger"
+              >Por favor, insira um e-mail válido.</span
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Senha"
+              [formControl]="passwordFormControl"
+            />
+            <label for="password">Senha</label>
+            <span
+              *ngIf="passwordFormControl.invalid && passwordFormControl.touched"
+              class="text-danger"
+              >Por favor, insira uma senha.</span
+            >
+          </div>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="emailFormControl.invalid || passwordFormControl.invalid"
+            >
+              Entrar
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

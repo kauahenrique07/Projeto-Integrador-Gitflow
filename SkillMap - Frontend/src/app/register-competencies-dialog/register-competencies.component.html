@@ -1,0 +1,23 @@
+<div class="register-competencies-container">
+  <h2>Registrar Competências</h2>
+  <perfect-scrollbar>
+    <form (submit)="saveCompetencies()">
+      <div *ngFor="let _ of [].constructor(10); let index = index" class="form-group">
+        <div class="fixed-width-select">
+          <mat-form-field appearance="fill" class="competency-field">
+            <mat-label>Competência {{ index + 1 }}</mat-label>
+            <mat-select [value]="getSelectedValue(index)" (valueChange)="onCompetencySelected($event, index)" [compareWith]="compareCompetencies">
+              <mat-option *ngFor="let competence of getAvailableCompetencies(index); trackBy: trackByFn" [value]="competence">
+                {{competence.reference}} | {{competence.name}} | {{competence.quadrant}} | {{competence.core}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button type="submit" class="btn btn-purple btn-space">Registrar</button>
+        <button type="button" class="btn btn-purple" (click)="onNoClick()">Cancelar</button>
+      </div>
+    </form>
+  </perfect-scrollbar>
+</div>

@@ -1,0 +1,118 @@
+.task-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #6F00B5, #AA00FF);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .task-list-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  .task-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to right, #542DB0, #6F00B5);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  .task-card:hover {
+    transform: scale(1.05);
+  }
+
+  .task-info {
+    flex: 1;
+  }
+
+  .task-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .task-description {
+    font-size: 1.2rem;
+  }
+
+  .task-deadline, .task-status {
+    font-size: 1rem;
+  }
+
+  .task-status-pending {
+    color: #FFAA00;
+  }
+
+  .task-status-in-progress {
+    color: #00AAFF;
+  }
+
+  .task-status-completed {
+    color: #00FF00;
+  }
+
+  .task-status-selector {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .new-task-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color: #6f42c1;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .new-task-button:hover {
+    background-color: #6f42c1;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .task-list-container {
+      padding: 0.5rem;
+    }
+    .task-list-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .task-card {
+      padding: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .task-name {
+      font-size: 1.2rem;
+    }
+    .task-description, .task-deadline, .task-status {
+      font-size: 1rem;
+    }
+    .task-status-selector {
+      width: 100%;
+    }
+  }

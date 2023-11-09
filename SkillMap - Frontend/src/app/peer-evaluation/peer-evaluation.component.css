@@ -1,0 +1,130 @@
+.peer-evaluation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #6F00B5, #AA00FF);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.peer-evaluation-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+}
+
+.instructions {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #eee;
+}
+
+.peer-evaluation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.peer-evaluation-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F7F7F7;
+    border: 2px solid #6F00B5;
+    box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    color: #6F00B5;
+}
+
+
+.peer-evaluation-card:hover  {
+    transform: scale(1.05);
+    background: #EAEAEA;
+}
+
+.peer-evaluation-card.selected  {
+    background: linear-gradient(to right, #6F00B5, #AA00FF);
+    color: white;
+}
+
+.peer-evaluation-info {
+    text-align: center;
+    color: #333333; 
+}
+
+
+.peer-evaluation-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: #6F00B5;
+}
+
+.peer-evaluation-card.selected .peer-evaluation-name {
+    color: #ffffff;
+}
+
+.peer-evaluation-card.selected .peer-evaluation-due-date {
+    color: #ffffff;
+}
+
+.peer-evaluation-due-date {
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+.selected-skills {
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.selected-skills-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+}
+
+.selected-skill {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.peer-evaluation-button {
+    padding: 0.5rem 1rem;
+    color: white;
+    background: linear-gradient(to right, #AA00FF, #6F00B5);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    transition: background 0.3s;
+}
+
+.peer-evaluation-button:hover {
+    background: linear-gradient(to right, #6F00B5, #542DB0);
+}
+
+@media (max-width: 768px) {
+    .peer-evaluation-list {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}

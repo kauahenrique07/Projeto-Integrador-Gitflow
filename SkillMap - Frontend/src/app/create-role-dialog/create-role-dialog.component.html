@@ -1,0 +1,13 @@
+<div class="create-role-dialog-container">
+    <h2>Criar Cargo</h2>
+    <form [formGroup]="createRoleForm" (ngSubmit)="saveRole()">
+        <mat-form-field appearance="fill" class="role-field">
+            <mat-label>Título do Cargo</mat-label>
+            <input matInput formControlName="title" required>
+        </mat-form-field>
+        <div class="btn-container">
+            <button type="submit" class="btn btn-purple btn-space" [disabled]="!createRoleForm.valid">Salvar</button>
+            <button type="button" class="btn btn-purple" (click)="onNoClick()">Cancelar</button>
+        </div>
+    </form>
+</div>

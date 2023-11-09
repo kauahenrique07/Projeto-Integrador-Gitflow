@@ -1,0 +1,23 @@
+<div class="edit-competencies-dialog-container">
+  <h2>Editar Competências para {{ data.job.title }}</h2>
+  <perfect-scrollbar>
+    <form (submit)="saveCompetencies()">
+      <div *ngFor="let i of [].constructor(10); let index = index" class="form-group">
+        <div class="fixed-width-select">
+          <mat-form-field *ngIf="getAvailableCompetencies(index)?.length" appearance="fill" class="competency-field">
+          <mat-label>Competência {{ index + 1 }}</mat-label>
+            <mat-select id="competency-select-{{index}}" [value]="selectedCompetencies[index]" (valueChange)="onCompetencySelected($event, index)" [compareWith]="compareCompetencies">
+            <mat-option *ngFor="let competence of competencies" [value]="competence">
+                {{competence.reference}} | {{competence.name}} | {{competence.quadrant}} | {{competence.core}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button type="submit" class="btn btn-purple btn-space">Salvar</button>
+        <button type="button" class="btn btn-purple" (click)="onNoClick()">Cancelar</button>
+      </div>
+    </form>
+  </perfect-scrollbar>
+</div>

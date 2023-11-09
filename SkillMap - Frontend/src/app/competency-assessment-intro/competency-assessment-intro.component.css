@@ -1,0 +1,51 @@
+.assessment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to right bottom, #6F00B5, #AA00FF);
+    color: white;
+  }
+  
+  .assessment-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .assessment-content {
+    background-color: white;
+    color: #542DB0;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 800px;
+    line-height: 1.4;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+  
+  .assessment-content p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .assessment-button {
+    background-color: #6F00B5;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .assessment-button:hover {
+    background-color: #AA00FF;
+  }

@@ -1,0 +1,139 @@
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #6F00B5, #AA00FF);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+      width: 300px;
+      height: auto;
+      margin-bottom: 2rem;
+  }
+
+  .welcome-text {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      line-height: 1.4;
+      color: white;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card {
+    width: 290px;
+    height: 290px;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+  .card:hover {
+      transform: translateY(-5px);
+      background-color: #8A00D4;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #542DB0;
+  }
+
+  .card:hover .card-title {
+      color: white;
+  }
+
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+    .admin-button {
+      display: none;
+    }
+
+
+    .logo {
+      order: 1;
+      text-align: center;
+    }
+
+    .card {
+      flex-basis: calc(50% - 1rem);
+    }
+
+    .admin-button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card {
+      flex-basis: calc(100% - 1rem);
+    }
+
+    .admin-button {
+      font-size: 0.8rem;
+      padding: 0.5rem 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card-container {
+      justify-content: center;
+    }
+
+    .card {
+      margin-bottom: 1.5rem;
+    }
+  }

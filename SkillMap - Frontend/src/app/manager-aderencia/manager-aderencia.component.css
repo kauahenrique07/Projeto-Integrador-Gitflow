@@ -1,0 +1,106 @@
+.manager-pdi-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #6F00B5, #AA00FF);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+  }
+  
+  .manager-pdi-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+  
+  .my-pdi-button {
+    margin-bottom: 2rem;
+    color: #6F00B5; 
+    background: #ffffff; 
+    border-radius: 0.5rem;
+    border: none;
+    transition: background 0.3s, color 0.3s; 
+    padding: 10px 20px; 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+  }
+  
+  .my-pdi-button:hover {
+    color: #ffffff;
+    background: #6F00B5; 
+  }
+  
+  .employee-list {
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  
+  .employee-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #542DB0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+    color: white;
+  }
+  
+  .employee-card:hover {
+    background: #6F00B5;
+  }
+  
+  .employee-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .employee-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .employee-status {
+    font-size: 1rem;
+  }
+  
+  .employee-pdi-button {
+    color: white;
+    background: linear-gradient(to right, #AA00FF, #6F00B5);
+    border-radius: 0.5rem;
+    border: none;
+    transition: background 0.3s;
+  }
+  
+  .employee-pdi-button:hover {
+    background: linear-gradient(to right, #6F00B5, #542DB0);
+  }
+  
+  @media (max-width: 768px) {
+    .employee-list {
+      width: 100%;
+    }
+    .employee-card {
+      flex-direction: column;
+    }
+    .employee-info {
+      margin-bottom: 1rem;
+    }
+    .employee-pdi-button {
+      margin-bottom: 1rem;
+    }
+  }
+  

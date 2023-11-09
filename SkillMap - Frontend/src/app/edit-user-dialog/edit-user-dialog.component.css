@@ -1,0 +1,80 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+h1.dialog-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.4;
+  color: #542DB0;
+  text-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+}
+
+
+.debug-output {
+  display: none;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border: 1px solid #542DB0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-label {
+  color: #542DB0;
+}
+
+.mat-form-field-appearance-fill.mat-focused .mat-form-field-label {
+  color: #6f42c1;
+}
+
+.mat-form-field-appearance-fill:not(.mat-form-field-disabled) .mat-form-field-flex {
+  background-color: #fff;
+}
+
+
+.mat-button {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background-color: #542DB0;
+  border-color: #542DB0;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+}
+
+.mat-button:hover {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  transform: translateY(-2px);
+}
+
+.mat-button:focus {
+  outline: none;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.mat-select {
+  font-size: 1rem;
+  height: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #542DB0;
+  box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.3);
+  transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.mat-select:focus {
+  outline: none;
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}

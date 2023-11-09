@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div class="header">
+    <img src="assets/images/23nobg.png" alt="Logo do Skillmap" class="logo" />
+    <button *ngIf="isAdmin" routerLink="/admin" class="admin-button">Visão Admin</button>
+  </div>
+  <div class="content">
+    <div class="welcome-text">
+      <h2>Olá, {{name}}</h2>
+      <span>Seja</span><br />
+      <span>Bem-vindo ao</span><br />
+      <span>Skillmap</span>
+    </div>
+    <div class="card-container">
+      <a routerLink="/pending-assessments" class="card">
+        <h2 class="card-title">Avaliação de Competência</h2>
+      </a>
+
+      <a [routerLink]="isManager ? '/manager-pdi' : '/user-pdi'" class="card">
+      <h2 class="card-title">PDI</h2>
+      </a>
+
+      <a class="card" (click)="adherenceClick()">
+        <h2 class="card-title"   >Desafios de Liderança</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

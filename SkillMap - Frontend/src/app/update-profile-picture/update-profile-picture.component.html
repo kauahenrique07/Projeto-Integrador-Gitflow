@@ -1,0 +1,7 @@
+<div class="container">
+  <h2>Olá!</h2>
+  <p>É muito importante que você escolha uma foto de perfil para utilizar no SkillMap :)</p>
+  <input type="file" (change)="onFileSelected($event)" />
+  <img *ngIf="selectedFile" #imagePreview class="image-preview" alt="Pré-visualização da imagem" />
+  <button class="submit-button" (click)="onSubmit()">Enviar Foto</button>
+</div>

@@ -1,0 +1,41 @@
+<div class="user-evaluation-container">
+  <img src="assets/images/23nobg.png" alt="Skillmap Logo" class="logo" />
+  <p>Olá {{assessment?.evaluateeName}}, seja bem vindo a sua avaliação, sinta-se a vontade. :)</p>
+  <h1 class="user-evaluation-title">Selecione 10 competências individuais que te representam:</h1>
+  <p class="instructions">Selecione clicando sobre as competências. Para desmarcar, clique novamente.</p>
+
+
+  <div *ngIf="isLoading" class="loading-message">
+    <p>Carregando competências...</p>
+  </div>
+
+  <div *ngIf="!isLoading && !hasError" class="user-evaluation-list">
+    <div *ngFor="let skill of skills" class="user-evaluation-card"
+         [class.selected]="selectedSkills.includes(skill)" (click)="selectSkill(skill)">
+      <div class="user-evaluation-info">
+        <h2 class="user-evaluation-name">{{ skill.quadrant }}</h2>
+        <p class="user-evaluation-due-date">{{ skill.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensagem de erro de carregamento -->
+  <div *ngIf="hasError" class="error-message">
+    <p>Erro ao carregar competências. Tente novamente mais tarde.</p>
+  </div>
+
+  <div class="selected-skills">
+    <h2 class="selected-skills-title">Competências selecionadas</h2>
+    <div *ngFor="let skill of selectedSkills" class="selected-skill">
+      <p class="selected-skill-name">{{ skill.quadrant }}</p>
+    </div>
+  </div>
+  <div class="action-buttons">
+    <button type="button" class="user-evaluation-button"
+            [disabled]="isSubmitting"
+            (click)="onSubmit()">
+      {{ isSubmitting ? 'Carregando...' : 'Finalizar Avaliação' }}
+    </button>
+    <button type="button" class="cancel-evaluation-button"  [disabled]="selectedSkills.length != 10">Cancelar</button>
+  </div>
+</div>

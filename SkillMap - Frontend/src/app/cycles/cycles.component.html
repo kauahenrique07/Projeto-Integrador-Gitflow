@@ -1,0 +1,21 @@
+<div class="create-cycle-container">
+    <h2>Criar Ciclo</h2>
+    <form [formGroup]="createCycleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Título do Ciclo</label>
+        <input type="text" class="form-control" id="title" formControlName="title" required>
+      </div>
+      <div class="form-group">
+        <label for="startDate">Data de Início</label>
+        <input type="date" class="form-control" id="startDate" formControlName="startDate" required>
+      </div>
+      <div class="form-group">
+        <label for="endDate">Data Fim</label>
+        <input type="date" class="form-control" id="endDate" formControlName="endDate" required>
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn btn-purple" [disabled]="!createCycleForm.valid">Criar Ciclo</button>
+      </div>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </form>
+  </div>

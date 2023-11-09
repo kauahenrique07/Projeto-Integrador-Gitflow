@@ -1,0 +1,20 @@
+<div class="task-list-container">
+    <h1 class="task-list-title">Plano de Desenvolvimento de: (Nome do usuário)</h1>
+    <app-johari-window></app-johari-window>
+    <h1 class="task-list-title">Tarefas</h1>
+    <button class="new-task-button" (click)="openNewTaskDialog()">Nova Tarefa</button>
+    <div class="task-list">
+      <mat-card class="task-card" *ngFor="let task of tasks">
+        <div class="task-info">
+          <h2 class="task-name">{{task.title}}</h2>
+          <p class="task-description">{{task.description}}</p>
+          <p class="task-deadline">Prazo: {{task.deadline}}</p>
+          <p [ngClass]="{'task-status-pending': task.status === 'Pendente', 
+                         'task-status-in-progress': task.status === 'Em andamento',
+                         'task-status-completed': task.status === 'Concluído'}">
+            Status: {{task.status}}
+          </p>
+        </div>
+      </mat-card>
+    </div>
+  </div>

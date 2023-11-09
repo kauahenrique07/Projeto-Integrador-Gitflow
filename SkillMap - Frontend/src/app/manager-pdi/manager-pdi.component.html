@@ -1,0 +1,19 @@
+<div class="manager-pdi-container">
+
+    <h1 class="manager-pdi-title">Gerenciamento de PDIs</h1>
+    <button class="my-pdi-button" (click)="viewOwnPDI()">Ver meu PDI</button>
+
+    <div class="employee-list" *ngIf="employees.length > 0; else noEmployee">
+      <div class="employee-card" *ngFor="let employee of employees">
+        <div class="employee-info">
+          <span class="employee-name">{{employee.name}}</span>
+          <span class="employee-status"></span>
+        </div>
+        <button class="employee-pdi-button" (click)="navigateToEmployeePdi(employee)">Ver PDI</button>
+      </div>
+    </div>
+
+    <ng-template #noEmployee>
+      <p>Nenhum colaborador encontrado.</p>
+    </ng-template>
+  </div>

@@ -1,0 +1,70 @@
+.johari-window-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 90px;
+}
+
+.ideal-competencies-container {
+  background: linear-gradient(to right, #542DB0, #6F00B5);
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.quadrant-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.johari-window-quadrant {
+  flex: 1 0 46%;
+  background: linear-gradient(to right, #542DB0, #6F00B5);
+  border-radius: 1rem;
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 0.5rem;
+}
+
+.quadrant-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.competency-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.competency-table th, .competency-table td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+}
+
+.competency-table th {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+
+@media (max-width: 768px) {
+  .johari-window-quadrant {
+    flex: 1 0 100%;
+    padding: 0.5rem;
+  }
+  .quadrant-title {
+    font-size: 1.2rem;
+  }
+}

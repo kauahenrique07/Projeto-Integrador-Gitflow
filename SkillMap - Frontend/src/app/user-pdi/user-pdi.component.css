@@ -1,0 +1,188 @@
+.task-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #6F00B5, #AA00FF);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+
+.back-button {
+  margin-top: -3px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+  .task-list-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  .task-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to right, #542DB0, #6F00B5);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  .task-card:hover {
+    transform: scale(1.05);
+  }
+
+  .task-info {
+    flex: 1;
+  }
+
+  .task-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .task-description {
+    font-size: 1.2rem;
+  }
+
+  .task-deadline, .task-status {
+    font-size: 1rem;
+  }
+
+  .task-status-pending {
+    color: #FFAA00;
+  }
+
+  .task-status-in-progress {
+    color: #00AAFF;
+  }
+
+  .task-status-completed {
+    color: #00FF00;
+  }
+
+  .task-status-selector {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+.task-card select {
+  width: 25%;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.5;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+  background-color: #f3f3f3;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 35px;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-percentage {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.task-card select:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.task-card select option {
+  background-color: #542DB0;
+  color: white;
+  text-align: center;
+}
+
+.task-status-pending select {
+  border: 2px solid #FFAA00;
+  color: #FFAA00;
+}
+
+.task-status-in-progress select {
+  border: 2px solid #00AAFF;
+  color: #00AAFF;
+}
+
+.task-status-completed select {
+  border: 2px solid #00FF00;
+  color: #00FF00;
+}
+
+.task-card select option {
+  background-color: #542DB0;
+  color: white;
+}
+
+
+  @media (max-width: 768px) {
+    .task-list-container {
+      padding: 0.5rem;
+    }
+    .task-list-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .task-card {
+      padding: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .task-name {
+      font-size: 1.2rem;
+    }
+    .task-description, .task-deadline, .task-status {
+      font-size: 1rem;
+    }
+    .task-status-selector {
+      width: 100%;
+    }
+  }

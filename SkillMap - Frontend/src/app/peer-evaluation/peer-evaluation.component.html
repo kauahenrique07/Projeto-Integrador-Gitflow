@@ -1,0 +1,32 @@
+<div class="peer-evaluation-container">
+  <img src="assets/images/23nobg.png" alt="Skillmap Logo" class="logo" />
+  <h1 class="peer-evaluation-title">Selecione 10 competências individuais que representam: <br> {{assessment?.evaluateeName}}</h1>
+  <p class="instructions">Selecione clicando sobre as competências. Para desmarcar, clique novamente.</p>
+
+  <!-- Spinner de Carregamento -->
+  <div *ngIf="isLoading" class="loading-spinner">Carregando...</div>
+
+  <!-- Mensagem de Erro -->
+  <div *ngIf="hasError" class="error-message">Ocorreu um erro ao carregar as competências. Por favor, tente novamente mais tarde.</div>
+
+  <div class="peer-evaluation-list">
+    <div *ngFor="let skill of skills" class="peer-evaluation-card"
+         [class.selected]="selectedSkills.includes(skill)" (click)="selectSkill(skill)">
+      <div class="peer-evaluation-info">
+        <h2 class="peer-evaluation-name">{{ skill.quadrant }}</h2>
+        <p class="peer-evaluation-due-date">{{ skill.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-skills">
+    <h2 class="selected-skills-title">Competências selecionadas</h2>
+    <div *ngFor="let skill of selectedSkills" class="selected-skill">
+      <p class="selected-skill-name">{{ skill.quadrant }}</p>
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <button type="button" class="peer-evaluation-button" (click)="onSubmit()" [disabled]="selectedSkills.length != 10">Confirmar seleção</button>
+  </div>
+</div>

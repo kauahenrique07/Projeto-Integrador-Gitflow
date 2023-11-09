@@ -1,0 +1,87 @@
+<body>
+<div class="main-container">
+  <button class="back-button" (click)="goBack()">&#8592;</button>
+  <h2 class="welcome-text">Desafios de Liderança</h2>
+  <a href="/adherence-ranking" class="ranking-button">Ranking de Aderência</a>
+  <div class="dashboard-content">
+    <!-- Sidebar para selecionar o colaborador -->
+    <div class="sidebar">
+      <h3 class="sidebar-header">Colaboradores</h3>
+      <div class="employee-cards">
+        <div class="employee-card" *ngFor="let employee of employees" (click)="onEmployeeCardClick(employee)">
+          <div class="employee-pic" *ngIf="employee.profilePicture; else defaultAvatar">
+            <img [src]="employee.profilePicture" alt="Foto do Colaborador">
+          </div>
+          <ng-template #defaultAvatar>
+            <div class="employee-pic default-avatar">
+              {{ getInitials(employee.name) }}
+            </div>
+          </ng-template>
+          <div class="employee-details">
+            <h4>{{ employee.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área principal onde serão exibidos os gráficos do colaborador selecionado -->
+    <div class="main-content">
+      <!-- Mensagem exibida quando nenhum colaborador estiver selecionado -->
+      <div *ngIf="!selectedEmployee" class="select-employee-prompt">
+        Selecione um dos colaboradores no painel à esquerda <br> &larr;
+      </div>
+
+      <!-- Conteúdo visível apenas quando um colaborador estiver selecionado -->
+      <div *ngIf="selectedEmployee">
+        <div class="selected-user-info">
+          <h4>Colaborador Selecionado</h4>
+          <p>{{ selectedEmployee.name }}</p>
+          <p>Cargo: {{selectedEmployee.role}}</p>
+        </div>
+        <div class="selected-employee-pic-container">
+          <div class="selected-employee-pic" *ngIf="selectedEmployee.profilePicture; else selectedDefaultAvatar">
+            <img [src]="selectedEmployee.profilePicture" alt="Foto do Colaborador Selecionado">
+          </div>
+          <ng-template #selectedDefaultAvatar>
+            <div class="selected-employee-pic default-avatar">
+              {{ getInitials(selectedEmployee.name) }}
+            </div>
+          </ng-template>
+        </div>
+
+        <!-- Placeholder para os gráficos. -->
+        <div class="card-container">
+          <div class="card">
+            <div *ngIf="competenceDistribution && pieChartData && chartOptions && pieChartLabels">
+              <span class="card-title">Ideal</span>
+              <apx-chart
+                [series]="pieChartData"
+                [chart]="chartOptions.chart"
+                [labels]="pieChartLabels"
+                [responsive]="chartOptions.responsive">
+              </apx-chart>
+            </div>
+          </div>
+          <div class="card">
+            <span class="card-title">Percebido</span>
+            <div *ngIf="competencePerceivedDistribution && pieChartDataPerceived && chartOptions && pieChartLabelsPerceived">
+              <apx-chart
+                [series]="pieChartDataPerceived"
+                [chart]="chartOptions.chart"
+                [labels]="pieChartLabelsPerceived"
+                [responsive]="chartOptions.responsive">
+              </apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="adherence-card">
+          <span class="card-title">Aderência</span>
+          <div *ngIf="adherence">
+            <p>{{ adherence }}%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

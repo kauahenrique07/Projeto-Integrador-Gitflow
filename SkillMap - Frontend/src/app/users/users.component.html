@@ -1,0 +1,80 @@
+
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Usuários</h2>
+        <div class="d-flex justify-content-end mb-3">
+          <button class="btn btn-primary" (click)="onAddUser()">Novo usuário</button>
+        </div>
+        <div *ngIf="showForm">
+          <form (ngSubmit)="onSubmit()">
+            <div>
+              <label for="name">Nome completo:</label>
+              <input type="text" id="name" [(ngModel)]="newUser.name" name="name" required />
+            </div>
+            <div>
+              <label for="department">Departamento:</label>
+              <input type="text" id="departamento" [(ngModel)]="newUser.department.name" name="departamento" required />
+            </div>
+            <div>
+              <label for="role">Grupo de empregados:</label>
+              <input type="text" id="role" [(ngModel)]="newUser.role" name="role" required />
+            </div>
+            <div>
+              <label for="managerId">ID do gestor:</label>
+              <input type="number" id="managerId" [(ngModel)]="newUser.managerId" name="managerId" required />
+            </div>
+            <div>
+              <label for="managerName">Nome completo do gestor:</label>
+              <input type="text" id="managerName" [(ngModel)]="newUser.managerName" name="managerName" required />
+            </div>
+            <button type="submit" class="btn btn-success">Criar usuário</button>
+          </form>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>ID</th>
+              <th>Colaborador</th>
+              <th>Cargo</th>
+              <th>Gestor</th>
+              <th>Acesso</th>
+              <th>Bloqueio</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.userStatus ? 'Ativo' : 'Inativo' }}</td>
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.role}}</td>
+              <td>{{getManagerName(user.managerId)}}</td>
+              <td>{{user.accessType}}</td>
+              <td>{{user.isLocked ? 'Sim' : 'Não' }}</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-primary" (click)="onEditUser(user)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button class="btn btn-danger"
+                          (click)="onUserStatusChange(user)"
+                          [disabled]="!user.userStatus">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                  <button class="btn btn-warning"
+                          (click)="onUnlockUser(user)"
+                          [disabled]="!user.isLocked">
+                    <mat-icon>lock_open</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

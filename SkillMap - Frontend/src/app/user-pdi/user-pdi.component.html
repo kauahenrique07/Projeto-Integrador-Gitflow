@@ -1,0 +1,38 @@
+<div class="task-list-container">
+  <button class="back-button" (click)="goBack()">&#8592;</button>
+  <h1 class="task-list-title">Meu Plano de Desenvolvimento Individual</h1>
+  <app-johari-window></app-johari-window>
+  <h1 class="task-list-title">Tarefas</h1>
+  <div class="task-list">
+    <mat-card class="task-card" *ngFor="let task of tasks">
+      <div class="task-info">
+        <h2 class="task-name">{{task.title}}</h2>
+        <p class="task-description">{{task.description}}</p>
+        <p class="task-deadline">Prazo: {{task.deadline | date:'dd/MM/yyyy'}}</p>
+
+        <div [ngClass]="{
+                    'task-status-pending': task.taskStatusEnum === 'PENDENTE',
+                    'task-status-in-progress': task.taskStatusEnum === 'EM_ANDAMENTO',
+                    'task-status-completed': task.taskStatusEnum === 'CONCLUIDA'
+                }">
+          <select
+            [ngModel]="task.taskStatusEnum"
+            (ngModelChange)="onStatusChange($event, task)">
+            <option value="PENDENTE">Pendente</option>
+            <option value="EM_ANDAMENTO">Em Andamento</option>
+            <option value="CONCLUIDA">Concluído</option>
+          </select>
+        </div>
+
+        <!-- Barra de progresso -->
+        <div class="progress-bar-container">
+          <span class="progress-percentage">{{ getProgressDisplay(task) }}</span>
+          <div class="progress-bar"
+               [style.width.%]="task.taskStatusEnum === 'CONCLUIDA' ? 100 : calculateProgress(task)"
+               [style.backgroundColor]="getProgressBarColor(task)">
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

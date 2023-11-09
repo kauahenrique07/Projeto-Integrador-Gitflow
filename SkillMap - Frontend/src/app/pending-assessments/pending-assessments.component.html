@@ -1,0 +1,38 @@
+<div class="assessment-list-container">
+  <div class="top-section">
+    <button class="back-button" (click)="goBack()">&#8592;</button>
+    <img src="assets/images/23nobg.png" alt="Skillmap Logo" class="logo" />
+    <div class="title-help-section">
+      <h1 class="assessment-list-title">Avaliações Pendentes</h1>
+      <div class="help-container" (mouseenter)="showTooltip=true" (mouseleave)="showTooltip=false">
+        <button class="help-button">&#63;</button>
+        <div class="tooltip-card" *ngIf="showTooltip">
+          Aqui estão as avaliações que estão vinculadas a você. Clique em 'Iniciar Avaliação' para prosseguir.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="assessment-table">
+    <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Status</th>
+      <th>Data de Início</th>
+      <th>Data Limite</th>
+      <th>Ação</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let assessment of assessments">
+      <td>{{assessment.evaluateeName}}</td>
+      <td>{{ translateType(assessment.type)}}</td>
+      <td>{{ translateStatus(assessment.status) }}</td>
+      <td>{{assessment.startDate | date:'dd/MM/yyyy'}}</td>
+      <td>{{assessment.endDate | date:'dd/MM/yyyy'}}</td>
+      <td><button *ngIf="assessment.status !== 'FINALIZED' && assessment.status !== 'INACTIVE'" class="assessment-button" (click)="assessmentButton(assessment)">Iniciar Avaliação</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

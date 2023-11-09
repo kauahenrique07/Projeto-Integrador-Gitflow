@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
+.create-cycle-container {
+    font-family: 'Cabin', sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+.error-message{
+  color: red;
+}
+
+  .create-cycle-container h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    color: #542DB0;
+    text-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+  }
+
+  .create-cycle-container .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .create-cycle-container .form-group label {
+    margin-bottom: 0.5rem;
+    color: #542DB0;
+  }
+
+  .create-cycle-container .form-group input {
+    font-size: 1rem;
+    height: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.3);
+    transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+
+  .create-cycle-container .form-group input:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+  }
+
+  .create-cycle-container button {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background-color: #542DB0;
+    border-color: #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+  }
+
+  .create-cycle-container button:hover {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    transform: translateY(-2px);
+  }
+
+  .create-cycle-container button:focus {
+    outline: none;
+  }
+
+  .create-cycle-container .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .create-cycle-container .form-container {
+    width: 100%;
+  }
+
+  .create-cycle-container form {
+    width: 100%;
+  }
+
+  .create-cycle-container .form-group select {
+    font-size: 1rem;
+    height: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #542DB0;
+    box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.3);
+    transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+
+  .create-cycle-container .form-group select:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+  }

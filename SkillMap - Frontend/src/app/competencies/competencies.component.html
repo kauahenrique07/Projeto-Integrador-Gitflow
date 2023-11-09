@@ -1,0 +1,36 @@
+<div class="competencies-container">
+  <div class="header">
+    <h2>Cargos</h2>
+    <button class="btn btn-purple" (click)="openCreateRoleDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <table class="jobs-table">
+    <thead>
+    <tr>
+      <th>Cargo</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let job of jobs">
+      <td>{{ job.title }}</td>
+      <td>
+        <p *ngIf="job.competencies === 10" class="text-green">Competências Ideais Cadastradas</p>
+        <p *ngIf="job.competencies !== 10" class="text-red">Não possui competências</p>
+      </td>
+      <td>
+        <button *ngIf="job.competencies === 10" class="btn btn-purple" (click)="openEditCompetenciesDialog(job)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button *ngIf="job.competencies !== 10" class="btn btn-purple" (click)="openRegisterCompetenciesDialog(job)">
+          <mat-icon>playlist_add</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="manager-pdi-container">
+   
+    <h1 class="manager-pdi-title">Resultados de Aderências</h1>
+    <button class="my-pdi-button" (click)="viewOwnPDI()">Ver minha aderência</button>
+  
+    <div class="employee-list" *ngIf="employees.length > 0; else noEmployee">
+      <div class="employee-card" *ngFor="let employee of employees">
+        <div class="employee-info">
+          <span class="employee-name">{{employee.name}}</span>
+          <span class="employee-status">Respondeu a avaliação: {{employee.hasResponded ? 'Sim' : 'Não'}}</span>
+        </div>
+        <button class="employee-pdi-button" (click)="viewPDI()">Ver Aderência</button>
+      </div>
+    </div>
+  
+    <ng-template #noEmployee>
+      <p>Nenhum colaborador encontrado.</p>
+    </ng-template>
+  </div>
