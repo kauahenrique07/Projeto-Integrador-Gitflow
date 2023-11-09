@@ -19,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .right-panel {
     height: 100vh;
     display: flex;
@@ -27,22 +27,22 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .logo {
     width: 500px;
     height: auto;
   }
-  
+
   .welcome-text {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     text-align: center;
     line-height: 1.4;
-    color: #542DB0;
+    color: #000000;
     text-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
   }
-  
+
   .form-control {
     font-size: 1.75rem;
     height: auto;
@@ -66,13 +66,13 @@ body {
     box-shadow: 2px 2px 2px rgba(84, 45, 176, 0.5);
     transition: all 0.3s ease;
   }
-  
+
   .btn:hover {
     background-color: #6f42c1;
     border-color: #6f42c1;
     transform: translateY(-2px);
   }
-  
+
   footer-logo {
     max-width: 150px;
     height: auto;
@@ -85,7 +85,7 @@ body {
     text-decoration: none;
     transition: color 0.3s;
   }
-  
+
   .forgot-password:hover {
     color: #6f42c1;
   }
@@ -128,7 +128,7 @@ body {
 
 .logo-mobile{
   display: none;
-  
+
 }
 
 input:checked + .slider {
@@ -160,13 +160,13 @@ input:checked ~ .slider .icon {
   border-radius: 50%;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .left-panel {
-    display: none; 
+    display: none;
   }
 
   .container-fluid {
-    background: linear-gradient(to right bottom, #4B0082, #8A2BE2); 
+    background: linear-gradient(to right bottom, #4B0082, #8A2BE2);
   }
 
   .right-panel {
@@ -175,7 +175,7 @@ input:checked ~ .slider .icon {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: none; 
+    background: none;
   }
 
   .welcome-text {
@@ -190,10 +190,10 @@ input:checked ~ .slider .icon {
   }
 
   form {
-    width: 90%; 
-    margin: 0; 
-    box-shadow: none; 
-    background-color: transparent; 
+    width: 90%;
+    margin: 0;
+    box-shadow: none;
+    background-color: transparent;
   }
 
   .btn {
